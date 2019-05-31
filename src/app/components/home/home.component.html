@@ -1,0 +1,45 @@
+<section id="books">
+    <div class="container">
+        <br> <br>
+        <div class="row">
+            <div class="col">
+                <input type="text" #name (onkeyup)="getname(name)" class="form-control" pleaceholder="buscar chica..">
+            </div>
+        </div>
+
+        <br> <br>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let chicas of chicas">
+                <div class="card_book">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <p>
+                                <img src="{{chicas.foto}}" alt="{{chicas.name}} ">
+                                <h5 routerLink="/chicas/{{chicas.id}}" class="card-title">{{chicas.name}}</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"> Nombre: {{chicas.name}}</li>
+                                    <li class="list-group-item">Edad: {{chicas.edad}} </li>
+                                    <li class="list-group-item">Estatura: {{chicas.altura}} </li>
+                                    <li class="list-group-item">Color de ojos: {{chicas.ojos}} </li>
+                                    <li class="list-group-item">Color de cabello: {{chicas.cabello}} </li>
+                                    <li class="list-group-item">Tamaño del busto: {{chicas.busto}} </li>
+                                    <li class="list-group-item"> </li>
+                                </ul>
+
+
+                                <div class="container-precio-idioma">
+                                    <p class="badge badge-info">
+                                        ${{chicas.precio}}
+                                    </p>
+                                    <p class="badge badge-info">
+                                        Oferta: {{chicas.oferta}}
+                                    </p>
+                                </div>
+                                <a href="" class="btn btn-block btn-primary" target="_blank">Buy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+<section id="chicas">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let chicas of chicas">
+                <div class="card_book">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <p>
+                                <img class="img-fluid" src="{{chicas.foto}}" alt="{{chicas.name}}">
+                            </p>
+                            <h4 routerLink="/chicas/{{chicas.id}}" class="card-title">{{chicas.name}}</h4>
+                            <p class="card-text">
+                                {{chicas.descripcion}}
+                            </p>
+                            <div class="container-precio-idioma">
+                                <p class="badge badge-info">
+                                    ${{chicas.precio}}
+                                </p>
+                                <p class="badge badge-info">
+                                    {{chicas.busto}}
+                                </p>
+                            </div>
+                            <a href="" class="btn btn-block btn-primary" target="_blank">Buy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,74 @@
+<div class="modal fade" id="modalChica" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    {{!this.dataApi.selectedChica.id ? 'Nueva chica' : 'Actualizar chica'}}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <form name="formChica" #formChica="ngForm" (ngSubmit)="onSaveChica(formChica)">
+                    <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedChica.id">
+                    <input type="hidden" name="userUid" [value]="userUid">
+                    <div class="form-group">
+                        <label for="name" class="col-form-label">Nombre</label>
+                        <input type="text" class="form-control" name="name" placeholder="Nombre de la chiquibeibi" [(ngModel)]="this.dataApi.selectedChica.name">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="edad">Edad</label>
+                            <input type="text" name="edad" class="form-control" placeholder="Edad de la chiquibeibi" [(ngModel)]="this.dataApi.selectedChica.edad">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="cabello">Color de cabello</label>
+                            <input type="text" name="cabello" class="form-control" placeholder="Color de cabello de la chiquibeibi" [(ngModel)]="this.dataApi.selectedChica.cabello">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ojos">Color de ojos</label>
+                            <input type="text" name="ojos" class="form-control" placeholder="Color de ojos de la chiquibeibi" [(ngModel)]="this.dataApi.selectedChica.ojos">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="altura">Altura</label>
+                            <input type="text" name="altura" class="form-control" placeholder="Altura de la chiquibeibi" [(ngModel)]="this.dataApi.selectedChica.altura">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="busto">Busto</label>
+                            <input type="text" name="busto" class="form-control" placeholder="Busto de la chiquibeibi" [(ngModel)]="this.dataApi.selectedChica.busto">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="Foto">Foto</label>
+                            <input type="text" name="foto" class="form-control" placeholder="LInk de la foto de la chiquibeibi" [(ngModel)]="this.dataApi.selectedChica.foto">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="precio">Precio</label>
+                            <input type="text" name="precio" class="form-control" placeholder="$0000.00" [(ngModel)]="this.dataApi.selectedChica.precio">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="oferta">Oferta</label>
+                            <select name="oferta" class="form-control" [(ngModel)]="this.dataApi.selectedChica.oferta">
+                          <option value="1">Si</option>
+                          <option value="0">No</option>
+                        </select>
+                        </div>
+
+
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion" class="col-form-label">Descripcion:</label>
+                        <textarea class="form-control" name="descripcion" [(ngModel)]="this.dataApi.selectedChica.descripcion"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Chica</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
