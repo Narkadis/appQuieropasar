@@ -23,6 +23,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { SearchComponent } from './components/search/search.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { SearchComponent } from './components/search/search.component';
     ProfileComponent,
     RegisterComponent,
     Page404Component,
-    SearchComponent
+    SearchComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { SearchComponent } from './components/search/search.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [AngularFireAuth, AngularFirestore],
   bootstrap: [AppComponent]
